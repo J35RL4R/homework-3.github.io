@@ -13,7 +13,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  var pLength = prompt("How Long do you want it???? (between 8 -12 characters please)");
+  var pLength = prompt("How Long do you want it???? (between 8 - 128 characters please)");
   while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("FRIGGIN DUDE!! The Length must be 8-128 characters."));
 
   var numbers = confirm("Do you want numbers in it?");
