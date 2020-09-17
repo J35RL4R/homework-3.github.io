@@ -14,15 +14,25 @@ generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
   var pLength = prompt("How Long do you want it???? (between 8 -128 characters please)");
-
+  while ( pLength < 8 || pLength > 128) {
+    pLength = prompt("Length must be 8-128 characters. How many characters would you like your password to be?");
+  }
   var numbers = confirm("Do you want numbers in it?");
 
   var lCase = confirm("Maybe a few lower cases?");
 
   var uCase = confirm("HOW ABOUT UPPERCASE?");
 
-  var schar = confirm("Do you want to be SPECIAL with special characters?");
-
+  var sChar = confirm("Do you want to be SPECIAL with special characters?");
+  
+  while (!( numbers || lCase || uCase || sChar)) {
+    confirm("Gotta pick one character type, please");
+    numbers = confirm("Numbers?");
+    lCase = confirm("Lowercase letters?");
+    uCase = confirm("Uppercase letters?");
+    sChar = confirm("Special characters?");
+  }
+  
   var mCount = 0;
 
   var minNumbers = "";
@@ -70,7 +80,7 @@ function generatePassword() {
 
   }
 
-  if (schar === true) {
+  if (sChar === true) {
     minSpecialChar = functionArray.getSpecialCharacters();
     mCount++;
 
