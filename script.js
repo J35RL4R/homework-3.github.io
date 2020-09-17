@@ -13,8 +13,7 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword() {
-  var pLength = prompt("How Long do you want it???? (between 8 - 128 characters please)");
-  while (isNaN(length) || length < 8 || length > 128) length = Number(prompt("FRIGGIN DUDE!! The Length must be 8-128 characters."));
+  var pLength = prompt("How Long do you want it???? (between 8 -128 characters please)");
 
   var numbers = confirm("Do you want numbers in it?");
 
@@ -77,19 +76,19 @@ function generatePassword() {
 
   }
 
-  var randomPasswordGenerated = "";
+  var passwordGenerated = "";
 
   for (let i = 0; i < (parseInt(pLength) - mCount); i++) {
     var randomNumberPicked = Math.floor(Math.random() * 4);
 
-    randomPasswordGenerated += randomNumberPicked;
+    passwordGenerated += randomNumberPicked;
 
   }
-  randomPasswordGenerated += minNumbers;
-  randomPasswordGenerated += minLowerCase;
-  randomPasswordGenerated += minUpperCase;
-  randomPasswordGenerated += minSpecialChar;
+  passwordGenerated += minNumbers;
+  passwordGenerated += minLowerCase;
+  passwordGenerated += minUpperCase;
+  passwordGenerated += minSpecialChar;
 
-  return randomPasswordGenerated;
+  return passwordGenerated;
 
 }
